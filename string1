@@ -1,0 +1,103 @@
+//helloname
+
+public String helloName(String name) {
+  return "Hello " + name + "!";
+}
+
+//makeAbba
+public String makeAbba(String a, String b) {
+   return a + b + b + a;
+}
+
+//makeTags
+public String makeTags(String tag, String word) {
+   return "<" + tag + ">" + word + "</" + tag + ">";
+    
+}
+
+//makeOutWord
+public String makeOutWord(String out, String word) {
+  int midIndex = out.length() / 2;
+        return out.substring(0, midIndex) + word + out.substring(midIndex);
+    
+}
+
+//extraend
+public String extraEnd(String str) {
+  if (str.length() < 2) {
+            // Handle cases where the string length is less than 2
+            return "String length must be at least 2.";
+  }
+  String lastTwoChars = str.substring(str.length() - 2);
+        return lastTwoChars + lastTwoChars + lastTwoChars;
+}
+
+//firstTwo
+public String firstTwo(String str) {
+  if (str.length() < 2) {
+            // If the string is shorter than length 2, return the whole string
+            return str;
+        } else {
+            // Return the first two characters of the string
+            return str.substring(0, 2);
+        }
+}
+
+//firstHalf
+public String firstHalf(String str) {
+   int halfLength = str.length() / 2;
+        return str.substring(0, halfLength);
+}
+
+//withoutEnd
+public String withoutEnd(String str) {
+  if (str.length() >= 2) {
+            // Return the substring excluding the first and last characters
+            return str.substring(1, str.length() - 1);
+        } else {
+            // Handle cases where the string length is less than 2
+            return "String length must be at least 2.";
+        }
+
+}
+
+//comboString
+public String comboString(String a, String b) {
+   if (a.length() < b.length()) {
+            return a + b + a;
+        } else {
+            return b + a + b;
+        }
+}
+
+//nonStart
+public String nonStart(String a, String b) {
+  if (a.length() >= 1 && b.length() >= 1) {
+            return a.substring(1) + b.substring(1);
+        } else {
+            // Handle cases where either string has length less than 1
+            return "Both strings must have at least length 1.";
+        }
+}
+
+//left2
+public String left2(String str) {
+  if (str.length() >= 2) {
+            // Rotate left 2 by moving the first 2 characters to the end
+            return str.substring(2) + str.substring(0, 2);
+        } else {
+            // Handle cases where the string length is less than 2
+            return "String length must be at least 2.";
+        }
+}
+
+//right2
+public String right2(String str) {
+  if (str.length() >= 2) {
+            // Rotate right 2 by moving the last 2 characters to the start
+            return str.substring(str.length() - 2) + str.substring(0, str.length() - 2);
+        } else {
+            // Handle cases where the string length is less than 2
+            return "String length must be at least 2.";
+        }
+}

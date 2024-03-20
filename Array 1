@@ -1,0 +1,45 @@
+//firstLast6
+public boolean firstLast6(int[] nums) {
+  int len = nums.length;
+        return nums[0] == 6 || nums[len - 1] == 6;
+    
+}
+
+
+//sameFirstLast
+public boolean sameFirstLast(int[] nums) {
+  int len = nums.length;
+        return len >= 1 && nums[0] == nums[len - 1];
+}
+
+
+//makePi
+public int[] makePi() {
+   return new int[]{3, 1, 4};
+}
+
+
+//commonEnd
+public boolean commonEnd(int[] a, int[] b) {
+  if (a.length >= 1 && b.length >= 1) {
+            return a[0] == b[0] || a[a.length - 1] == b[b.length - 1];
+        }
+        return false;
+}
+
+
+// sum3
+public int sum3(int[] nums) {
+  return nums[0] + nums[1] + nums[2];
+}
+
+
+//rotateLeft3
+public int[] rotateLeft3(int[] nums) {
+   int[] rotatedArray = new int[3];
+        rotatedArray[0] = nums[1];
+        rotatedArray[1] = nums[2];
+        rotatedArray[2] = nums[0];
+        return rotatedArray;
+}
+

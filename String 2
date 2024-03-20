@@ -1,0 +1,74 @@
+//doubleChar
+public String doubleChar(String str) {
+    StringBuilder result = new StringBuilder();
+
+       
+        for (int i = 0; i < str.length(); i++) {
+            char currentChar = str.charAt(i);
+    
+            result.append(currentChar).append(currentChar);
+        }
+
+        return result.toString();
+    
+}
+
+
+//countHi
+public int countHi(String str) {
+  int count = 0;
+        int index = str.indexOf("hi"); 
+        while (index != -1) {
+            count++; 
+            index = str.indexOf("hi", index + 1); 
+}
+        return count;
+    
+}
+
+//catDog
+public boolean catDog(String str) {
+  int catCount = 0;
+        int dogCount = 0;
+        int index = str.indexOf("cat"); 
+        while (index != -1) {
+            catCount++;
+            index = str.indexOf("cat", index + 1); }
+            
+        index = str.indexOf("dog"); 
+
+        while (index != -1) {
+            dogCount++; 
+            index = str.indexOf("dog", index + 1); 
+        }
+
+        return catCount == dogCount;
+    }
+
+
+// countCode
+public int countCode(String str) {
+
+int count = 0;
+        for (int i = 0; i < str.length() - 3; i++) {
+            if (str.substring(i, i + 2).equals("co") && str.charAt(i + 3) == 'e') {
+                count++;
+            }
+        }
+        return count;
+    }
+
+
+//endOther
+public boolean endOther(String a, String b) {
+   String lowerA = a.toLowerCase();
+        String lowerB = b.toLowerCase();
+        return lowerA.endsWith(lowerB) || lowerB.endsWith(lowerA);
+    
+}
+
+//xyzThere
+public boolean xyzThere(String str) {
+   str = str.replaceAll("(\\.)(xyz)", "");
+return str.contains("xyz");
+}

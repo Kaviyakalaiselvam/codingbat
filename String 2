@@ -72,3 +72,34 @@ public boolean xyzThere(String str) {
    str = str.replaceAll("(\\.)(xyz)", "");
 return str.contains("xyz");
 }
+
+
+//bobThere
+public boolean bobThere(String str) {
+if(str.length()<=2){
+  return false;
+} 
+for(int i=0;i<str.length()-2;i++)
+{
+  if(((str.substring(i,i+1).equals("b")) && (str.substring(i+2,i+3)).equals("b"))){
+    return true;
+  }
+}
+return false;
+}
+
+
+//xyBalance
+public boolean xyBalance(String str) {
+   int lastYIndex = -1;
+        for (int i = 0; i < str.length(); i++) {
+            if (str.charAt(i) == 'x') {
+                lastYIndex = str.indexOf('y', i); 
+                if (lastYIndex == -1) { 
+                    return false;
+                }
+                i = lastYIndex; 
+            }
+        }
+        return true; 
+}

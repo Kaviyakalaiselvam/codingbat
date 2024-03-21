@@ -43,3 +43,29 @@ public int[] rotateLeft3(int[] nums) {
         return rotatedArray;
 }
 
+
+//reverse3
+public int[] reverse3(int[] nums) {
+  int [] reverseArray=new int [nums.length];
+  for(int i=0;i<nums.length;i++){
+   reverseArray [i]=nums[nums.length-i-1]; 
+  }
+  return reverseArray;
+}
+
+
+//maxEnd3
+public int[] maxEnd3(int[] nums) {
+  int large=0;
+  if((nums[0]>nums[nums.length-1]) ||( nums[0]==nums[nums.length-1])){
+    large=nums[0];
+    
+  }
+  else if(nums[0]<nums[nums.length-1]){
+    large=nums[nums.length-1];
+  }
+  for(int i=0;i<nums.length;i++){
+    nums[i]=large;
+  }
+  return nums;
+}

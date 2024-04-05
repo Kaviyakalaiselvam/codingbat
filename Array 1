@@ -85,6 +85,28 @@ public int sum2(int[] nums) {
 }
 
 
+// makeEnds
+public int[] makeEnds(int[] nums) {
+  int[] result=new int[2];
+  result[0]=nums[0];
+  result[1]=nums[nums.length-1];
+  
+  return result;
+}
+
+
+//has23
+public boolean has23(int[] nums) {
+  for(int num:nums){
+  if(num==2 || num==3){
+    return true;
+  }
+  }
+  return false;
+  
+}
+
+
 //middleWay
 public int[] middleWay(int[] a, int[] b) {
   return new int[]{a [1],b[1]};

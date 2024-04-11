@@ -159,3 +159,176 @@ public String repeatSeparator(String word, String sep, int count) {
         }
         return result.toString();
 }
+
+
+//prefixAgain
+public boolean prefixAgain(String str, int n) {
+  int len = str.length();
+  String prefix = str.substring(0,n);
+  
+  for (int i = n; i < len; i++) {
+    if(n+i <= len) { 
+      if (prefix.equals(str.substring(i,n+i)))
+        return true;
+    }
+  }
+  return false;
+}
+
+
+//xyzMiddle
+public boolean xyzMiddle(String str) {
+  String xyz = "xyz";
+  int len = str.length();
+  int middle = len / 2;
+  
+  if (len < 3)
+    return false;
+    
+  if (len % 2 != 0) {
+    if (xyz.equals(str.substring(middle-1,middle+2))) {
+      return true;
+    } else {
+        return false;
+      }
+  } else if (xyz.equals(str.substring(middle-1,middle+2)) || 
+      xyz.equals(str.substring(middle-2,middle+1))) {
+          return true;
+  } else
+      return false;  
+}
+
+
+//getSandwich
+public String getSandwich(String str) {
+   int len = str.length();
+  String tmpString = "";
+  String finalString = "";
+  int start = 0;
+  int finish = 0;
+  boolean found = false;
+  
+  if (len <= 10)
+    return "";
+  
+  for (int i = 0; i < len - 4; i++) {
+    tmpString = str.substring(i, i+5);
+    
+    if (tmpString.equals("bread") && found == true)
+      finish = i;  
+      
+    if (tmpString.equals("bread") && found == false) {
+      start = i+5;
+      found = true; 
+    } 
+  }
+  
+  finalString = str.substring(start,finish);
+  return finalString;
+
+}
+
+
+//sameStarChar
+public boolean sameStarChar(String str) {
+   for(int i = 1; i < str.length() - 1; i++) {
+        if(str.charAt(i) == '*' && str.charAt(i - 1) != str.charAt(i + 1))
+            return false;
+    }
+                
+    return true;
+}
+
+
+// oneTwo
+public String oneTwo(String str) {
+   String result = "";
+  for(int i=0; i <str.length()-2; i += 3)
+  {
+      result = result + str.substring(i+1,i+3) + str.charAt(i);
+  }
+  return result;
+}
+
+
+//zipZap
+public String zipZap(String str) {
+  int len = str.length();
+  String finalString = "";
+  
+  for (int i = 0; i < len; i++) {
+    finalString += str.substring(i,i+1);
+    if (i > 0 && i < len-1) {
+      if (str.charAt(i-1) == 'z' && str.charAt(i+1) == 'p')
+        finalString = finalString.substring(0,finalString.length()-1);
+    }
+  }
+  return finalString;
+}
+
+
+//starOut
+public String starOut(String str) {
+ StringBuilder result = new StringBuilder();
+    
+    for (int i = 0; i < str.length(); i++) {
+        char currentChar = str.charAt(i);
+        
+        if (currentChar == '*') {
+                      if (i > 0 && str.charAt(i - 1) != '*') {
+                result.deleteCharAt(result.length() - 1); 
+                }
+           
+            if (i < str.length() - 1 && str.charAt(i + 1) != '*') {
+                i++;
+            }
+        } else {
+            result.append(currentChar); 
+            }
+    }
+    
+    return result.toString();
+
+}
+
+
+//plusOut
+public String plusOut(String str, String word) {
+   StringBuilder result = new StringBuilder();
+    int wordLength = word.length();
+    
+    for (int i = 0; i < str.length(); ) {
+        if (i + wordLength <= str.length() && str.substring(i, i + wordLength).equals(word)) {
+            result.append(word);
+            i += wordLength; 
+            } else {
+            result.append("+"); 
+            i++;
+        }
+    }
+    
+    return result.toString();
+}
+
+
+//wordEnds
+public String wordEnds(String str, String word) {
+   StringBuilder result = new StringBuilder();
+    int wordLength = word.length();
+    
+    for (int i = 0; i < str.length(); i++) {
+        if (i + wordLength <= str.length() && str.substring(i, i + wordLength).equalsIgnoreCase(word)) {
+            
+            if (i > 0) {
+                result.append(str.charAt(i - 1));
+            }
+            
+            if (i + wordLength < str.length()) {
+                result.append(str.charAt(i + wordLength));
+            }
+        }
+    }
+    
+    return result.toString();
+
+}
